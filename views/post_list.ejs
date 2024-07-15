@@ -6,33 +6,36 @@
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li>
-            Posted by: <%= post.postedBy.username %><br> 
+            <h2>Posted by: <%= post.postedBy.username %></h2><br>
             <img src=<%= post.imageUrl %>><br>
-            <%= post.message %><br>
-            <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %><br> 
-
-            <% const likedUsers = []; %>
-            <% post.likedBy.forEach(function(user) {%>
-                <% likedUsers.push(user.username) %>
-            <% }); %> 
-
-            <% if (likedUsers.length > 0) { %>
-                Liked by: <%= likedUsers.join(", ") %><br>
+            <h2><%= post.message %></h2><br>
+            <p><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p><br> 
+            
+            <span><%= post.likedBy.length %> 
+            <% if (post.likedBy.length > 1) { %>
+                likes and
             <% } else { %>
-            <% }; %>
+                like and 
+            <% }; %></span>
 
-            <% const dislikedUsers = []; %>
-            <% post.dislikedBy.forEach(function(user) {%>
-                <% dislikedUsers.push(user.username) %>
-            <% }); %>
-
-            <% if (dislikedUsers.length > 0) { %>
-                Disliked by: <%= dislikedUsers.join(", ") %><br>
+            <span><%= post.dislikedBy.length %> 
+            <% if (post.dislikedBy.length > 1) { %>
+                dislikes.
             <% } else { %>
-            <% }; %>         
+                dislike.
+            <% }; %></span>
+                
         </li><br>
     <% }); %>
 </ol>
+
+<%if (postList.previous) { %>
+    <a href="<%= postList.previous %>">Previous</a>
+<% } %>
+<%if (postList.next) { %>
+    <a href="<%= postList.next %>">Next</a>
+<% } %>
+
 </body>
 <%- include('_footer') -%>
 </html>
