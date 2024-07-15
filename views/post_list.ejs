@@ -6,8 +6,31 @@
 <ol>
     <% postList.results.forEach(function(post) {%>
         <li>
-            <%= post.message %> - <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %>
-        </li>
+            Posted by: <%= post.postedBy.username %><br> 
+            <img src=<%= post.imageUrl %>><br>
+            <%= post.message %><br>
+            <%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %><br> 
+
+            <% const likedUsers = []; %>
+            <% post.likedBy.forEach(function(user) {%>
+                <% likedUsers.push(user.username) %>
+            <% }); %> 
+
+            <% if (likedUsers.length > 0) { %>
+                Liked by: <%= likedUsers.join(", ") %><br>
+            <% } else { %>
+            <% }; %>
+
+            <% const dislikedUsers = []; %>
+            <% post.dislikedBy.forEach(function(user) {%>
+                <% dislikedUsers.push(user.username) %>
+            <% }); %>
+
+            <% if (dislikedUsers.length > 0) { %>
+                Disliked by: <%= dislikedUsers.join(", ") %><br>
+            <% } else { %>
+            <% }; %>         
+        </li><br>
     <% }); %>
 </ol>
 </body>
