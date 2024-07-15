@@ -11,18 +11,26 @@
             <h2><%= post.message %></h2><br>
             <p><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p><br> 
             
+            <form method="post" action="/posts/<%= post.id %>/like/">
+                <button type="submit">Like</button>
+            </form>
+
+            <form method="post" action="/posts/<%= post.id %>/dislike/">
+                <button type="submit">Dislike</button>
+            </form>
+
             <span><%= post.likedBy.length %> 
-            <% if (post.likedBy.length > 1) { %>
-                likes and
+            <% if (post.likedBy.length == 1) { %>
+                like and
             <% } else { %>
-                like and 
+                likes and 
             <% }; %></span>
 
             <span><%= post.dislikedBy.length %> 
-            <% if (post.dislikedBy.length > 1) { %>
-                dislikes.
-            <% } else { %>
+            <% if (post.dislikedBy.length == 1) { %>
                 dislike.
+            <% } else { %>
+                dislikes.
             <% }; %></span>
                 
         </li><br>
