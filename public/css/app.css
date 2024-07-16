@@ -1,33 +1,82 @@
 /* Add your styles here. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.kalnia-glaze-header {
+  font-family: "Kalnia Glaze", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+.josefin-sans-body {
+  font-family: "Josefin Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1 {
+    font-family: "Kalnia Glaze", serif;
+    font-size: 300%;
+}
+
+body {
+    font-family: "Josefin Sans", sans-serif;
+    background-color: #e6f6e1;
+}
 
 .page-container {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
-    
+    padding: 20px;
 }
 
 .post-list-container {
     display: flex;
     flex-direction: column;
-    flex-wrap: wrap;
     align-items: center;
+    width: 100%;
     max-width: 80%;
 }
 
 .post-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    max-width: 75%;
+    max-width: 100%;
+    margin: 20px;
+    padding: 20px;
+    border: 5px solid #87FF00;
+    background-color: #feecf8;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5%;
+}
 
+@media (max-width: 500px) {
+    .post-container {
+        width: 100%;
+    }
+}
+
+@media (min-width: 501px) {
+    .post-container {
+        width: 60%;
+    }
 }
 
 img {
+    display: block;
     max-width: 100%; 
     height: auto; 
+    margin: 10px auto;
+    border-radius: 5%;
 }
 
 @media (min-width: 600px) {
@@ -38,13 +87,107 @@ img {
 
 ol {
     list-style-type: none;
+    padding: 0;
+    margin: 0;
 }
 
 .posted-by {
-    border: 5px solid rgb(255, 202, 211);
-    border-radius: 25%;
-    padding: 10px;
+    border: 2px solid #feecf8;
+    border-radius: 0%;
+    border-width: 10;
+    padding: 10px 20px;
+    text-align: center;
+    margin-bottom: 10px;
+    background-color: #feecf8;
 }
 
+.message {
+    text-align: center;
+    margin: 10px 0;
+    font-size: large;
+}
 
+.likes-and-dislikes {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+    flex-wrap: wrap;
+} 
 
+.likes-dislikes {
+    display: inline-block;
+    margin: 5px;
+}
+
+form {
+    display: inline-block;
+}
+
+button {
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.like-button {
+    background-color: #BEFFAE;
+}
+
+.dislike-button {
+    background-color: #FFA1A1;
+}
+
+a {
+    display: inline-block;
+    margin: 20px 10px;
+}
+
+.date {
+    text-align: right;
+    font-size: x-small;
+    margin: 10px;
+    width: 80%;
+}
+
+.page-turn-container {
+    display: flex;
+    align-items: center; 
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.page-button{
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #FFBAFF; 
+    color: #000000;
+    text-decoration: none; 
+    border-radius: 5px; 
+    border: none; 
+    cursor: pointer; 
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    margin: 0 auto;
+}
+
+.nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+}
