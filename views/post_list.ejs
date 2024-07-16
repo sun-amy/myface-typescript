@@ -2,48 +2,54 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1>Posts</h1>
-<ol>
-    <% postList.results.forEach(function(post) {%>
-        <li>
-            <h2>Posted by: <%= post.postedBy.username %></h2><br>
-            <img src=<%= post.imageUrl %>><br>
-            <h2><%= post.message %></h2><br>
-            <p><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p><br> 
-            
-            <form method="post" action="/posts/<%= post.id %>/like/">
-                <button type="submit">Like</button>
-            </form>
+    <div class="page-container">
+        
+        <h1>Posts</h1>
 
-            <form method="post" action="/posts/<%= post.id %>/dislike/">
-                <button type="submit">Dislike</button>
-            </form>
+        <ol class="flex-container">
+            <% postList.results.forEach(function(post) {%>
+                <li class="post">
+                    <h2 class="posted-by">Posted by: <%= post.postedBy.username %></h2>
 
-            <span><%= post.likedBy.length %> 
-            <% if (post.likedBy.length == 1) { %>
-                like and
-            <% } else { %>
-                likes and 
-            <% }; %></span>
+                    <img src=<%= post.imageUrl %>>
 
-            <span><%= post.dislikedBy.length %> 
-            <% if (post.dislikedBy.length == 1) { %>
-                dislike.
-            <% } else { %>
-                dislikes.
-            <% }; %></span>
-                
-        </li><br>
-    <% }); %>
-</ol>
+                    <h2 class="message"><%= post.message %></h2>
 
-<%if (postList.previous) { %>
-    <a href="<%= postList.previous %>">Previous</a>
-<% } %>
-<%if (postList.next) { %>
-    <a href="<%= postList.next %>">Next</a>
-<% } %>
+                    <span class="likes-dislikes"><%= post.likedBy.length %> 
+                        <% if (post.likedBy.length == 1) { %>
+                            like
+                        <% } else { %>
+                            likes
+                        <% }; %></span>
 
+                    <form method="post" action="/posts/<%= post.id %>/like/">
+                        <button class="like-button" type="submit">Like</button>
+                    </form>
+
+                    <span class="likes-dislikes"><%= post.dislikedBy.length %> 
+                        <% if (post.dislikedBy.length == 1) { %>
+                            dislike
+                        <% } else { %>
+                            dislikes
+                        <% }; %></span>
+
+                    <form method="post" action="/posts/<%= post.id %>/dislike/">
+                        <button class="dislike-button" type="submit">Dislike</button>
+                    </form>
+
+                    <p class="date"><%= format(post.createdAt, "yyyy-MM-dd HH:mm:ss") %></p> 
+                        
+                </li><br>
+            <% }); %>
+        </ol>
+
+        <%if (postList.previous) { %>
+            <a href="<%= postList.previous %>">Previous</a>
+        <% } %>
+        <%if (postList.next) { %>
+            <a href="<%= postList.next %>">Next</a>
+        <% } %>
+    </div>
 </body>
 <%- include('_footer') -%>
 </html>

@@ -1,1 +1,50 @@
 /* Add your styles here. */
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    
+}
+
+.post-list-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    max-width: 80%;
+}
+
+.post-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    max-width: 75%;
+
+}
+
+img {
+    max-width: 100%; 
+    height: auto; 
+}
+
+@media (min-width: 600px) {
+    img {
+        width: 60%;
+    }
+}
+
+ol {
+    list-style-type: none;
+}
+
+.posted-by {
+    border: 5px solid rgb(255, 202, 211);
+    border-radius: 25%;
+    padding: 10px;
+}
+
+
+
