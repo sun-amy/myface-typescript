@@ -2,7 +2,24 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1><%= name %></h1>
-</body>
+    <div class="user-detail-container">
+        <div class ="cover-image-container">
+            <img class="cover-image" src=<%= coverImageUrl %>>
+            <div class="overlay"></div>
+        </div>
+        <div class="user-info-container">
+            <div class ="profile-image-container">
+                <img class="profile-image" src=<%= profileImageUrl %>>
+            </div>
+        
+            <div class="user-text-container">
+                <h1 class="user-text"><%= name %></h1>
+                <p class="user-text"><%= username %></p> 
+                <p class="user-text"><%= email %></p>
+            </div>
+        </div>
+    </div>
+     <!-- posts -->
+    </body>
 <%- include('_footer') -%>
 </html>
