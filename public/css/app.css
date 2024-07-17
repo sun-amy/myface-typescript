@@ -71,7 +71,15 @@ body {
     }
 }
 
-img {
+.logo {
+    display: block;
+    padding: 10px;
+    max-width: 35%;
+    height: auto;
+    margin: 10px;
+}
+
+.post-image {
     display: block;
     max-width: 100%; 
     height: auto; 
