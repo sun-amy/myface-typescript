@@ -5,7 +5,13 @@
     <div class="page-container">
 
         <h1>MyFace Posts</h1>
-
+        
+        <div class="random-colour-container">
+            <button class="random-colour-button" id="random-colour-button" type="button">
+                <i class="fa-solid fa-dice"></i> Click me!
+            </button>
+        </div>
+   
         <ol class="post-list-container">
             <% postList.results.forEach(function(post) {%>
                 <li class="post-container">
@@ -58,6 +64,18 @@
             <% } %>
         </div>
     </div>
+
+    <script>
+        const postContainers = document.getElementsByClassName("post-container");
+
+        const button = document.getElementById("random-colour-button");
+        button.addEventListener("click", function () {
+            for (let i = 0; i < postContainers.length; i++) {
+                postContainers[i].style.background = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
+            }
+        });
+    </script>
+    
 </body>
 <%- include('_footer') -%>
 </html>
