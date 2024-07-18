@@ -1,15 +1,32 @@
 <header class="header-container">
-    <nav class="nav-container">
+
+    <button class="nav-toggle" id="nav-toggle" type="button">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    
+    <div class="nav-menu" id="nav-menu">
+        <a href="/users" class="nav-link">Users</a>
+        <a href="/posts" class="nav-link">Posts</a>
+        <a href="/posts/create" class="nav-link">New Post</a>
         <img class="logo" src="https://i.ibb.co/DwWTLkY/logo.png" alt="logo">
-        <button class="nav-toggle">
-            <i class="fa-solid fa-bars"></i>
-        </button>
-        <ul class="nav-menu">
-            <li class="nav-item"><a href="/users" class="nav-link">Users</a></li>
-            <li class="nav-item"><a href="/posts" class="nav-link">Posts</a></li>
-            <li class="nav-item"><a href="/posts/create" class="nav-link">New Post</a></li>
-        </ul>
-    </nav>
+    </div>
+    <script>
+        const navMenu = document.getElementById("nav-menu");
+        const menuButton = document.getElementById("nav-toggle");
+        menuButton.addEventListener("click", function () {
+            if (navMenu.style.display === "flex") {
+                navMenu.style.display = "none";
+            } else {
+                navMenu.style.display = "flex";
+            }
+        });
+        
+        document.addEventListener("click", function (event) {
+            if (navMenu.style.display === "flex" && !navMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                navMenu.style.display = "none";
+            }
+        });
+    </script>
 </header>
 
 

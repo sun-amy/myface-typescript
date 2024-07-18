@@ -3,7 +3,7 @@
 <%- include('_header') -%>
 <body>
     <div class="page-container">
-
+        <img class="logo" src="https://i.ibb.co/DwWTLkY/logo.png" alt="logo">
         <h1>MyFace Posts</h1>
         
         <div class="random-colour-container">
@@ -68,8 +68,8 @@
     <script>
         const postContainers = document.getElementsByClassName("post-container");
 
-        const button = document.getElementById("random-colour-button");
-        button.addEventListener("click", function () {
+        const colourButton = document.getElementById("random-colour-button");
+        colourButton.addEventListener("click", function () {
             for (let i = 0; i < postContainers.length; i++) {
                 postContainers[i].style.background = `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`;
             }
