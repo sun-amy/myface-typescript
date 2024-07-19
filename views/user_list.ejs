@@ -11,13 +11,18 @@
                 </li>
             <% }); %>
         </ol>
+    </div>
+
+    <div class="page-turn-container">
         <%if (previous) { %>
-            <a href="<%= previous %>" class="page-button">Previous</a>
+            <a href="<%= previous %>" class="page-button">
+                <i class="fas fa-arrow-left"></i> Previous</a>
         <% } %>
         <%if (next) { %>
-            <a href="<%= next %>" class="page-button">Next</a>
+            <a href="<%= next %>" class="page-button">Next <i class="fas fa-arrow-right"></i></a>
         <% } %>
     </div>
+
 </body>
 <%- include('_footer') -%>
 </html>
