@@ -193,9 +193,11 @@ a {
 }
 
 .nav-menu {
-    background-color: #151820;
+    background-color: #87B97A;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 70%;
     height: 100vh;
     top: 0%;
@@ -211,6 +213,19 @@ a {
     translate: 0 0;
 }
 
+.nav-link {
+    text-decoration: none;
+    font-size: 30;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-logo {
+    display: block;
+    width: 50%;
+}
+
 /* user detail */
 
 .profile-image {
@@ -218,7 +233,7 @@ a {
     height: auto;
     margin: 10px auto;
     border-radius: 50%;
-    border: 5px solid #dcdcdc;
+    border: 5px solid #A1D992;
 }
 
 @media (min-width: 500px) {
@@ -292,7 +307,7 @@ a {
     left: 0;
     width: 100%;
     height: 80%;
-    background-color: #252a388f; 
+    background-color: #FFBAFF73; 
     pointer-events: none;
     z-index: 1;
 }
@@ -307,11 +322,49 @@ a {
 
 .user-text {
     font-family: "Segoe UI", sans-serif;
-    padding: 5px;
+}
+
+.name-text {
+    font-size: 24px;
+    line-height: 32px;
     margin: 5px;
 }
 
-h1.user-text {
-    font-size: large;
-    margin-bottom: 5px;
+.username-text .email-text {
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.username-text {
+    font-weight: 600;
+}
+
+/* user list */
+
+.user-list-page-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.user-list-text {
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.user-list-item {
+    background-color: #ffbaff98;
+    margin: 10px;
+    padding: 0px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.user-list-item:hover {
+    background-color: #FFBAFF;
 }
