@@ -14,22 +14,18 @@
         const navMenu = document.getElementById("nav-menu");
         const menuButton = document.getElementById("nav-toggle");
         menuButton.addEventListener("click", function () {
-            if (navMenu.style.display === "flex") {
-                navMenu.style.display = "none";
-            } else {
-                navMenu.style.display = "flex";
-            }
+            navMenu.classList.toggle('menu-open');
         });
         
         document.addEventListener("click", function (event) {
-            if (navMenu.style.display === "flex" && !navMenu.contains(event.target) && !menuButton.contains(event.target)) {
-                navMenu.style.display = "none";
+            if (navMenu.classList.contains("menu-open") && !navMenu.contains(event.target) && !menuButton.contains(event.target)) {
+                navMenu.classList.toggle('menu-open');
             }
         });
 
         document.addEventListener("keydown", function(event) {
-        if (event.key === "Escape") {
-            navMenu.style.display = "none";
+        if (event.key === "Escape" && navMenu.classList.contains("menu-open")) {
+            navMenu.classList.toggle('menu-open');
         }
         });
     </script>
